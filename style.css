@@ -6,6 +6,7 @@
 #load,
 #error,
 #pager,
-#header {
+#header,
+#h {
     text-align: center;
 }
