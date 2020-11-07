@@ -23,7 +23,7 @@ $(() => {
                 pages = parseInt(repo_count / 100) + 1
             }
 
-            // console.log(pages)
+            console.log(pages)
 
             let promiseArray = []
 
