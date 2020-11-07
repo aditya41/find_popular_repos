@@ -23,7 +23,7 @@ $(() => {
                 pages = parseInt(repo_count / 100) + 1
             }
 
-            console.log(pages)
+            // console.log(pages)
 
             let promiseArray = []
 
@@ -44,7 +44,7 @@ $(() => {
 
                 const repoArray = repos.slice(0, repo_input)
 
-                console.log(repoArray)
+                // console.log(repoArray)
 
                 let newPromiseArray = []
 
@@ -65,24 +65,28 @@ $(() => {
                         i++
                     })
 
-                    console.log(final)
+                    // console.log(final)
                     let output = []
 
                     for (let i = 0; i < final.length; i++) {
                         let contributersFinal = []
+                        contributersFinal.push(`<ol>`)
                         for (let j = 0; j < final[i].contributors.length; j++) {
-                            contributersFinal.push(`<li>contributer name: ${final[i].contributors[j].name}
-                            <br> commits: ${final[i].contributors[j].commits}</li>`)
+                            contributersFinal.push(`<li><b>Contributer name:</b> ${final[i].contributors[j].name}        
+                             <b>Commits:</b> ${final[i].contributors[j].commits}</li>`)
                         }
+                        contributersFinal.push(`</ol>`)
                         output.push(
                             `<li>
-                            repo-name-> ${final[i].details.name}  total-Forks-> ${final[i].details.forks} <br>
-                            top contributers are ${contributersFinal}
-                            </li>`
+                            <b>Repo-name:</b> ${final[i].details.name}  <b>Total-Forks:</b> ${final[i].details.forks} <br>
+                            <b><i>top contributers are</i></b><br> <br>
+                            ${contributersFinal}
+                            </li><hr>`
                         )
                     }
                     $('#load').hide()
-                    $('#list').append(`<li>${output}</li>`)
+
+                    $('#list').append(output)
 
 
                 })
@@ -127,12 +131,13 @@ const getContributorData = async(url) => {
             }
 
             let arr = []
-
+            console.log(data)
             data.forEach((contributor) => {
                 arr.push({
                     name: contributor.author.login,
                     commits: contributor.total
                 })
+
             })
 
             resolve(arr)
