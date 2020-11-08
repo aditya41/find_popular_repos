@@ -5,6 +5,9 @@ Project-hosted-link: https://adityaalmabase.netlify.app/
 
 Tech-stack: html, Css, JavaScript, JQuery
 
+About: It takes 3 inputs (org_name),(how many top repos's of that org you want to see ) and (how many top contributors of that each repo you want to see).
+everything is shown in a readable format with all the links and avatars embedded. The first loading might take 5-10 sec as i am using free version of Api and dont have a fast server but i've taken care that the site never crash and give the output as quick as possible. For making calls less and fast i have used pagination technique. Ajax calls are used so that page dosent have to reload again and again which makes it scalable and ready for production.
+
 API used: 1> https://api.github.com/orgs/${org_name}
           2> https://api.github.com/orgs/${org_name}/repos?per_page=100&page=${page_no}
           3> https://api.github.com/repos/${org_name}/${repo_name}/stats/contributors
