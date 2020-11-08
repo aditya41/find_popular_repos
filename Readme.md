@@ -17,5 +17,11 @@ Special-features: 1> when requested repos are large in number then the site dose
                   6> Ajax (XHR) requests are used so that the page dont reload.
                   7> Client side renderring is done.
 
+For running it on your system: 1> download the code.
+                               2> open it in vs code.
+                               3> right click on index.html file.
+                               4> Click on open with live server.
+                               5> Make sure u have active internet connection.
 
+    
 My linkedIn profile and email link is also given on the home page :) 
